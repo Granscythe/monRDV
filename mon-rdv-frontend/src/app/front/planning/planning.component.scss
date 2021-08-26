@@ -1,0 +1,40 @@
+@media (max-width:575px) {
+  .display-4 {
+    font-size: 1.5rem;
+
+  }
+  .day h5 {
+    background-color: #f8f9fa;
+    padding: 3px 5px 5px;
+    margin: -8px -8px 8px -8px;
+
+  }
+
+  .date {
+    padding-left: 4px;
+  }
+}
+.test {
+  color: red;
+  width: 10px;
+}
+
+.heures tr {
+  height:15px;
+}
+.heures td {
+  font-size:15px;
+}
+
+//.blank-row
+//{
+//  height: 20px !important; /* overwrites any other rules */
+//  background-color: #FFFFFF;
+//}
+
+
+@media (min-width: 576px) {
+  .day {
+    height: 24.2857vw;
+  }
+}
