@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-validation-rdv',
+  selector: 'validationRdv',
   templateUrl: './validation-rdv.component.html',
   styleUrls: ['./validation-rdv.component.scss']
 })

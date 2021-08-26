@@ -1,1 +1,74 @@
-<p>validation-rdv works!</p>
+<div class="card mt-3">
+  <div class="card-header bg-info text-white">
+    <h2>Liste des évaluations</h2>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Identifiant</th>
+        <th>Version</th>
+        <th>Note comportementale</th>
+        <th>Note technique</th>
+        <th>Commentaires</th>
+        <th>Date d'évaluation</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr >
+<!--        <td>{{praticien.nom}}</td>-->
+        <td>"{{"NOM"</td>
+<!--        <td>{{praticien.prenom}}</td>-->
+        <td>"Prenom"</td>
+<!--        <td>{{praticien.specialite}}</td>-->
+        <td>"Specialité"</td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer">
+    <a class="btn btn-success btn-lg" >
+      <i class="fa fa-plus"></i>
+    </a>
+  </div>
+  <div class="card mt-3" >
+<!--  <div class="card mt-3" *ngIf="!praticienForm==this.user">           Faire en sorte que on ne peux voir cet ecran que si on est pas le praticien (on ne peux pas prendre rdv avec soi meme)-->
+    <div class="card-header bg-info text-white">
+      <h3>Edition de l'évaluation</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="form-group">
+        <label for="comportemental">Note comportementale :</label>
+        <input type="number" class="form-control" id="comportemental" [(ngModel)]="evaluationForm.comportemental">
+      </div>
+      <div class="form-group">
+        <label for="technique">Note technique :</label>
+        <input type="number" class="form-control" id="technique" [(ngModel)]="evaluationForm.technique">
+      </div>
+      <div class="form-group">
+        <label for="commentaires">Commentaires :</label>
+        <input type="text" class="form-control" id="commentaires" [(ngModel)]="evaluationForm.commentaires">
+      </div>
+      <div class="form-group">
+        <label for="dtEvaluation">Date d'évaluation :</label>
+        <input type="date" class="form-control" id="dtEvaluation" [(ngModel)]="evaluationForm.dtEvaluation">
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="btn-group btn-group-lg float-right">
+        <a class="btn btn-success" (click)="save()">
+          <i class="fa fa-check"></i>
+        </a>
+        <a class="btn btn-warning" (click)="cancel()">
+          <i class="fa fa-sync"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
