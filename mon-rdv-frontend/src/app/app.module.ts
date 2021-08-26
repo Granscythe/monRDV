@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {FrontModule} from "./front/front.module";
+import { PatientComponent } from './patient/patient.component';
+import { LieuComponent } from './lieu/lieu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PatientComponent,
+    LieuComponent,
   ],
   imports: [
     BrowserModule,
