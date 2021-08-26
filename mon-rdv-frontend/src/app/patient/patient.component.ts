@@ -8,7 +8,7 @@ import {PatientHttpService} from "./patient-http.service";
   templateUrl: './patient.component.html',
   styleUrls: ['./patient.component.scss']
 })
-export class patientComponent implements OnInit {
+export class PatientComponent implements OnInit {
 
   patientForm: Patient = null;
 
