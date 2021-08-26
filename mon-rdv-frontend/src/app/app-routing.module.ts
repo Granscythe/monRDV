@@ -1,10 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {AccueilComponent} from "./front/accueil/accueil.component";
 
 
 const routes: Routes = [
-  // {path: "accueil", component: AccueilComponent},
-  // {path: "", redirectTo: "accueil", pathMatch: "full"}
+  {path: "accueil", component: AccueilComponent},
+  {path: "", redirectTo: "accueil", pathMatch: "full"}
 ];
 
 @NgModule({
