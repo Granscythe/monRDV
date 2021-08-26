@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {RdvFuturComponent} from "./front/rdv-futur/rdv-futur.component";
 
 
 const routes: Routes = [
-  // {path: "accueil", component: AccueilComponent},
+  {path: "rdvFutur", component: RdvFuturComponent},
   // {path: "", redirectTo: "accueil", pathMatch: "full"}
 ];
 

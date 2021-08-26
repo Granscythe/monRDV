@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {FrontModule} from "./front/front.module";
+import { ConsultationComponent } from './front/consultation/consultation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ConsultationComponent,
   ],
   imports: [
     BrowserModule,
