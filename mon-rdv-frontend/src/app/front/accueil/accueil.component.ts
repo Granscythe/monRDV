@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AccueilHttpService} from "./accueilHttp.service";
 
 @Component({
   selector: 'app-accueil',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  accueilForm: Accueil = null;
+
+  constructor(private accueilService : AccueilHttpService) {
+
+  }
 
   ngOnInit(): void {
+  }
+
+  list(): Array<Praticien> {
+  return this.accueilService.findbySpec();
+  }
+
+  cancel() {
+    this.accueilForm = null:
   }
 
 }
