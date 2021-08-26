@@ -6,15 +6,17 @@ export class Utilisateur {
   nom: string;
   prenom: string;
   email: string;
+  motDePasse: string;
   adresse: Adresse;
-  motDePasse: String;
 
-  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, adresse?: Adresse) {
+
+  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string, adresse?: Adresse) {
     this.id = id;
     this.version = version;
     this.nom = nom;
     this.prenom = prenom;
     this.email = email;
+    this.motDePasse = motDePasse;
     this.adresse = adresse;
   }
 }

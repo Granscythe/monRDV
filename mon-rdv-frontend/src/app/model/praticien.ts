@@ -14,8 +14,10 @@ export class Praticien extends Utilisateur{
   dureeCreneau: number;
 
 
-  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, adresse?: Adresse, matricule?: string, telephone?: string, photo?: string, convention?: string, carteVitale?: boolean, cb?: boolean, cheque?: boolean, espece?: boolean, dureeCreneau?: number) {
-    super(id, version, nom, prenom, email, adresse);
+  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string,
+              adresse?: Adresse, matricule?: string, telephone?: string, photo?: string, convention?: string,
+              carteVitale?: boolean, cb?: boolean, cheque?: boolean, espece?: boolean, dureeCreneau?: number) {
+    super(id, version, nom, prenom, email, motDePasse, adresse);
     this.matricule = matricule;
     this.telephone = telephone;
     this.photo = photo;
