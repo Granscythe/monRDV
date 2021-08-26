@@ -17,10 +17,14 @@ import {MatiereComponent} from "./matiere/matiere.component";
 import {FormateurComponent} from "./formateur/formateur.component";
 import {UeComponent} from "./ue/ue.component";
 import {FrontModule} from "./front/front.module";
+import { PreticienComponent } from './preticien/preticien.component';
+import { PatientComponent } from './patient/patient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PreticienComponent,
+    PatientComponent,
   ],
   imports: [
     BrowserModule,
