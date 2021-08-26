@@ -7,11 +7,15 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {FrontModule} from "./front/front.module";
 import { ConsultationComponent } from './front/consultation/consultation.component';
+import { PatientComponent } from './patient/patient.component';
+import { LieuComponent } from './lieu/lieu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConsultationComponent,
+    PatientComponent,
+    LieuComponent,
   ],
   imports: [
     BrowserModule,
