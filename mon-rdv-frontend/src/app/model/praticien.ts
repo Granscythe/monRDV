@@ -2,6 +2,7 @@ import {Utilisateur} from "./utilisateur";
 import {Adresse} from "./adresse";
 
 
+
 export class Praticien extends Utilisateur{
   matricule: string;
   telephone: string;
@@ -14,9 +15,9 @@ export class Praticien extends Utilisateur{
   dureeCreneau: number;
 
 
-  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string,
-              adresse?: Adresse, matricule?: string, telephone?: string, photo?: string, convention?: string,
-              carteVitale?: boolean, cb?: boolean, cheque?: boolean, espece?: boolean, dureeCreneau?: number) {
+
+  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string, matricule?: string, telephone?: string, photo?: string, convention?: string,
+              carteVitale?: boolean, cb?: boolean, cheque?: boolean, espece?: boolean, dureeCreneau?: number, adresse?: Adresse) {
     super(id, version, nom, prenom, email, motDePasse, adresse);
     this.matricule = matricule;
     this.telephone = telephone;

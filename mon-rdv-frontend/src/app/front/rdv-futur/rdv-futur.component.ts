@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RdvFuturHttpService} from "./rdv-futur-http.service";
 import {Consultation} from "../../model/Consultation";
+import {ConsultationHttpService} from "../consultation/consultation-http.service";
 import {Patient} from "../../model/patient";
 import {Creneau} from "../../model/Creneau";
 import {CreneauHttpService} from "../creneau/creneau-http.service";
