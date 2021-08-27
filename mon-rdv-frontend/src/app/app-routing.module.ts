@@ -7,6 +7,7 @@ import {RdvFuturComponent} from "./front/rdv-futur/rdv-futur.component";
 import {ConsultationComponent} from "./front/consultation/consultation.component";
 import {PlanningComponent} from "./front/planning/planning.component";
 import {ValidationRdvComponent} from "./front/validationRdv/validationRdv.component";
+import {AccueilComponent} from "./front/accueil/accueil.component";
 
 
 const routes: Routes = [
