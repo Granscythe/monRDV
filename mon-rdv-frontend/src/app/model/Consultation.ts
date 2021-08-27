@@ -1,5 +1,6 @@
 import {Praticien} from "./praticien";
 import {Creneau} from "./Creneau";
+import {Patient} from "./patient";
 
 export class Consultation{
   id:number;

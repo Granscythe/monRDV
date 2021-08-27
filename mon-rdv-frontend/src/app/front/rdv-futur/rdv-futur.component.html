@@ -1,7 +1,10 @@
-<div *ngFor="let consul of list()" class="card" style="width: 18rem;">
+<div *ngFor="let creneau of crenaux" class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">{{consul.id}}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">{{creneau.id}} - {{creneau.version}} - {{creneau.dateCreneau}}</h5>
+    <h5 class="card-title">{{creneau.consultation.id}} - {{creneau.consultation.nbCreneau}} - {{creneau.consultation.statut}}</h5>
+    <h5 class="card-title">{{creneau.consultation.praticien.id}} - {{creneau.consultation.praticien.nom}}  - {{creneau.consultation.praticien.prenom}} </h5>
+    <h5 class="card-title">{{creneau.consultation.patient.id}} - {{creneau.consultation.patient.nom}}  - {{creneau.consultation.patient.prenom}} </h5>
+
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>

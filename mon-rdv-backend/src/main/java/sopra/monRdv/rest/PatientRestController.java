@@ -48,6 +48,19 @@ public class PatientRestController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}
 	}
+	
+	@GetMapping("/{id}/consultation")
+	@JsonView(Views.ViewPatientConsultation.class)
+	public Patient findByIdAndConsultation(@PathVariable Long id) {
+
+		Optional<Patient> optPatient = utilisateurRepo.findPatientById(id);
+
+		if (optPatient.isPresent()) {
+			return optPatient.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
 
 	@PostMapping("")
 	public Patient create(@RequestBody Patient patient) {

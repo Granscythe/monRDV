@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Creneau;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.ICreneauRepository;
 
 @RestController
@@ -28,11 +31,19 @@ public class CreneauRestController {
 	private ICreneauRepository creneauRepo;
 
 	@GetMapping("")
+	@JsonView(Views.ViewCreneau.class)
 	public List<Creneau> findAll() {
 		return creneauRepo.findAll();
 	}
+	
+	@GetMapping("/patient/{id}")
+	@JsonView(Views.ViewCreneauPatient.class)
+	public List<Creneau> findAllCreneauPatient(@PathVariable Long id) {
+		return creneauRepo.findAllCreneauPatient(id);
+	}
 
 	@GetMapping("/{id}")
+	@JsonView(Views.ViewCreneau.class)
 	public Creneau find(@PathVariable Long id) {
 
 		Optional<Creneau> optCreneau = creneauRepo.findById(id);
