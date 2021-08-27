@@ -1,5 +1,7 @@
 package sopra.monRdv.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,12 +15,16 @@ import javax.persistence.TemporalType;
 @Entity
 public class Patient extends Utilisateur {
 	@Temporal(TemporalType.DATE)
+	@JsonView(Views.ViewCommon.class)
 	private Date dateNaissance;
 	@Column(length = 50)
+	@JsonView(Views.ViewCommon.class)
 	private String numeroSS;
 	@Column(length = 15)
+	@JsonView(Views.ViewCommon.class)
 	private String telephone;
 	@OneToMany(mappedBy = "patient")
+	@JsonView()
 	private List<Consultation> consultations = new ArrayList<Consultation>();
 
 	public Patient() {

@@ -1,5 +1,7 @@
 package sopra.monRdv.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,16 +18,22 @@ import javax.persistence.Version;
 public class Motif {
 	@Id
 	@GeneratedValue
+	@JsonView(Views.ViewCommon.class)
 	private Long id;
 	@Version
+	@JsonView(Views.ViewCommon.class)
 	private int version;
 	@Column(length = 255)
+	@JsonView(Views.ViewCommon.class)
 	private String libelle;
+	@JsonView(Views.ViewCommon.class)
 	private int nbCreneau;
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
+	@JsonView()
 	private Praticien praticien;
 	@OneToMany(mappedBy = "motif")
+	@JsonView(Views.ViewMotif.class)
 	private List<Consultation> consultations = new ArrayList<Consultation>();
 
 	public Motif() {
