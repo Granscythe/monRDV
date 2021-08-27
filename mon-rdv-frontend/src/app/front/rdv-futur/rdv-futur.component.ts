@@ -13,22 +13,28 @@ import {CreneauHttpService} from "../creneau/creneau-http.service";
 })
 export class RdvFuturComponent implements OnInit {
 
-  consultations: Array<Consultation> = new Array<Consultation>();
+  consultations:Array<Consultation>=new  Array<Consultation>();
+  crenauxFutur:Array<Creneau>=new Array<Creneau>();
   crenaux: Array<Creneau> = new Array<Creneau>();
   patient: Patient;
 
-  constructor(private rdvFuturService: RdvFuturHttpService, private creneauService: CreneauHttpService) {
+
+  constructor(private rdvFuturService:RdvFuturHttpService,private creneauService:CreneauHttpService ) { }
+
+  ngOnInit(): void {this.listCreneauFutur(2);
+
   }
 
-  ngOnInit(): void {
-    this.listCreneau(2);
-
-  }
-
-  listCreneau(id: number) {
-    this.creneauService.findAllByIdPatient(id).subscribe(resp => {
-      this.crenaux = resp;
+  listCreneauFutur(id:number) {
+    this.creneauService.findAllByIdPatientFutur(id).subscribe(resp => {
+      this.crenauxFutur = resp;
     });
   }
 
+
+  delete(id: number) {
+    this.creneauService.deleteById(id).subscribe(resp=>{
+       this.creneauService.load();}
+    ,error => console.log());
+  }
 }

@@ -44,7 +44,6 @@ export class PlanningComponent implements OnInit {
     let cren = new Array<Creneau>();
 
     for (let i of this.PlanningForm.creneaux) {
-      console.log("i " +new Date(i.dateCreneau.toString()).getDate());
       if (new Date(i.dateCreneau.toString()).getDate() == jour) {
         cren.push(i);
       }

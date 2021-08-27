@@ -7,11 +7,13 @@ import {RdvFuturComponent} from "./front/rdv-futur/rdv-futur.component";
 import {PlanningComponent} from "./front/planning/planning.component";
 import {AccueilComponent} from "./front/accueil/accueil.component";
 import {ConsultationComponent} from "./front/consultation/consultation.component";
+import {RdvPasserComponent} from "./front/rdv-passer/rdv-passer.component";
 import {ValidationRdvComponent} from "./front/validationRdv/validationRdv.component";
 
 
 const routes: Routes = [
   {path: "rdvFutur", component: RdvFuturComponent},
+  {path: "rdvPasser", component: RdvPasserComponent},
   // {path: "praticien", component: PraticienComponent},
   {path: "patient", component: PatientComponent},
   {path: "lieu", component: LieuComponent},

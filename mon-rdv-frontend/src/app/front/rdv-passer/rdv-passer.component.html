@@ -1,25 +1,20 @@
-<h2>Creneau Futur</h2>
+<h2>Creneau Passer</h2>
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-4" *ngFor="let creneau of crenauxFutur"  class="card">
-      <div class="card p-3 card-body">
+    <div class="col-md-4" *ngFor="let creneau of crenauxPasser"  class="card">
+      <div class="card p-3">
         <h5>Description du rendez vous :</h5>
         <p>Identifiant :{{creneau.id}}, Version : {{creneau.version}}  </p>
         <p>Date : {{creneau.dateCreneau}}, heure : {{creneau.heureCreneau}}  </p>
-        <p [style.color]="creneau.consultation.statut | statutCategori">Statut : {{creneau.consultation.statut }}</p>
+        <p>Statut : {{creneau.consultation.statut}}</p>
         <br>
 
         <h5>Information sur le praticien :</h5>
         <p>Nom : {{creneau.consultation.praticien.nom}}, Prenom : {{creneau.consultation.praticien.prenom}}  </p>
         <p> Email : {{creneau.consultation.praticien.email}}, Telephone : {{creneau.consultation.praticien.telephone}}  </p>
         <br>
-        <a  class="btn btn-primary" (click)="delete(creneau.id)">Annuler le rendez-vous</a>
+        <a  class="btn btn-primary">Prendre nouveau rendez vous</a>
       </div>
     </div>
   </div>
 </div>
-
-<br>
-
-
-

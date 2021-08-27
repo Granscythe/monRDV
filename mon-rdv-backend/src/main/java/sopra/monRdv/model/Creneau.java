@@ -45,7 +45,7 @@ public class Creneau {
 	private Lieu lieu;
 	@ManyToOne
 	@JoinColumn(name = "consultation_id")
-	@JsonView({Views.ViewCreneau.class,Views.ViewCreneauPatient.class,Views.ViewPlanning.class})
+	@JsonView({Views.ViewCreneau.class,Views.ViewCreneauPatient.class,Views.ViewCreneauPatientFutur.class,Views.ViewCreneauPatientPasser.class})
 	private Consultation consultation;
 
 	public Creneau() {

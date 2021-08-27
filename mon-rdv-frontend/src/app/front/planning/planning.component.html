@@ -2,17 +2,23 @@
 
 
 
-  <h4 class="display-4 mb-4 text-center">Docteur {{PlanningForm.praticien.nom}}</h4>
+  <h4 class="display-4 mb-4 text-center">Docteur {{PlanningForm.praticien.nom}}, durée creneau : {{PlanningForm.praticien.dureeCreneau}} min</h4>
   <h4 class="display-4 mb-4 text-center">Novembre 2017</h4>
+  <table class="rdv">
+    <tr><td class="dispo d-inline-flex rounded text-truncate bg-info text-white" title="Test Dispo">disponible</td></tr>
+    <tr><td class="reserve d-inline-flex rounded text-truncate" title="Test Res">réservé</td></tr>
+<!--    <tr><td class="non_dispo d-inline-flex rounded text-truncate" title="Test non_dispo">Non Disponible</td></tr>-->
+  </table>
+  <br>
         <span class="row">
           <h5 class="horaire col-sm-1 text-center">Horaires</h5>
-          <h5 class="col p-1 text-center">Lundi {{date}}</h5>
-          <h5 class="col p-1 text-center">Mardi {{date}}</h5>
-          <h5 class="col p-1 text-center">Mercredi {{date}}</h5>
-          <h5 class="col p-1 text-center">Jeudi {{date}}</h5>
-          <h5 class="col p-1 text-center">Vendredi {{date}}</h5>
-          <h5 class="col p-1 text-center">Samedi {{date}}</h5>
-          <h5 class="col p-1 text-center">Dimanche {{date}}</h5>
+          <h5 class="col p-1 text-center">Lundi 1</h5>
+          <h5 class="col p-1 text-center">Mardi 2</h5>
+          <h5 class="col p-1 text-center">Mercredi 3</h5>
+          <h5 class="col p-1 text-center">Jeudi 4</h5>
+          <h5 class="col p-1 text-center">Vendredi 5</h5>
+          <h5 class="col p-1 text-center">Samedi 6</h5>
+          <h5 class="col p-1 text-center">Dimanche 7</h5>
         </span>
 
   <div class="row border border-right-0 border-bottom-0">
@@ -25,6 +31,10 @@
           <tr><td></td></tr>
           <tr><td></td></tr>
           <tr><td>9h</td></tr>
+          <tr><td></td></tr>
+          <tr><td></td></tr>
+          <tr><td></td></tr>
+          <tr><td>10h</td></tr>
         </table>
 
         <small class="col d-sm-none text-center text-muted">Sunday</small>
@@ -36,44 +46,66 @@
 
     <div class="day col p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted">
       <table class="rdv">
-        <tr *ngFor="let cren of listCreneauxJour(1)"><td class="dispo d-inline-flex rounded text-truncate bg-info text-white" title="Test Dispo">Creneau n°
-          {{cren.id}}</td></tr>
+        <tr class="vide"><td></td></tr>
+        <tr *ngFor="let cren of listCreneauxJour(1)">
+          <td *ngIf="cren.dispo==true" class="dispo d-inline-flex rounded text-truncate bg-info text-white" title="Test Dispo">Creneau n°{{cren.id}}</td>
+          <td *ngIf="cren.dispo==false" class="reserve d-inline-flex rounded text-truncate" title="Test Dispo">Creneau n°{{cren.id}}</td>
+        </tr>
       </table>
 
 
     </div>
 
     <div class="day col p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted">
-
-
-
-    </div>
-
-    <div class="day col p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted">
-
-
-
-    </div>
-
-    <div class="day col p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted">
-
+      <table class="rdv">
+        <tr class="vide"><td></td></tr>
+        <tr *ngFor="let cren of listCreneauxJour(2)">
+          <td *ngIf="cren.dispo==true" class="dispo d-inline-flex rounded text-truncate bg-info text-white" title="Test Dispo">Creneau n°{{cren.id}}</td>
+          <td *ngIf="cren.dispo==false" class="reserve d-inline-flex rounded text-truncate" title="Test Dispo">Creneau n°{{cren.id}}</td>
+        </tr>
+      </table>
 
 
     </div>
 
     <div class="day col p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted">
+      <table class="rdv">
+        <tr class="vide"><td></td></tr>
+        <tr *ngFor="let cren of listCreneauxJour(3)">
+          <td *ngIf="cren.dispo==true" class="dispo d-inline-flex rounded text-truncate bg-info text-white" title="Test Dispo">Creneau n°{{cren.id}}</td>
+          <td *ngIf="cren.dispo==false" class="reserve d-inline-flex rounded text-truncate" title="Test Dispo">Creneau n°{{cren.id}}</td>
+        </tr>
+      </table>
 
+
+    </div>
+
+    <div class="day col p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted">
+      <table class="rdv">
+        <tr class="vide"><td></td></tr>
+        <tr *ngFor="let cren of listCreneauxJour(4)">
+          <td *ngIf="cren.dispo==true" class="dispo d-inline-flex rounded text-truncate bg-info text-white" title="Test Dispo">Creneau n°{{cren.id}}</td>
+          <td *ngIf="cren.dispo==false" class="reserve d-inline-flex rounded text-truncate" title="Test Dispo">Creneau n°{{cren.id}}</td>
+        </tr>
+      </table>
+
+
+    </div>
+
+    <div class="day col p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted">
+      <table class="rdv">
+        <tr class="vide"><td></td></tr>
+        <tr *ngFor="let cren of listCreneauxJour(5)">
+          <td *ngIf="cren.dispo==true" class="dispo d-inline-flex rounded text-truncate bg-info text-white" title="Test Dispo">Creneau n°{{cren.id}}</td>
+          <td *ngIf="cren.dispo==false" class="reserve d-inline-flex rounded text-truncate" title="Test Dispo">Creneau n°{{cren.id}}</td>
+        </tr>
+      </table>
 
 
     </div>
 
     <div class="day col p-2 border border-left-0 border-top-0 text-truncate bg-light">
-      <table class="rdv">
-        <tr class="vide"><td></td></tr>
-      <tr><td class="dispo d-inline-flex rounded text-truncate bg-info text-white" title="Test Dispo">disponible 8h-8h15</td></tr>
-      <tr><td class="reserve d-inline-flex rounded text-truncate" title="Test Res">réservé 8h15-8h30</td></tr>
-        <tr><td class="non_dispo d-inline-flex rounded text-truncate" title="Test non_dispo">Non Disponible 8h30-8h45</td></tr>
-      </table>
+
     </div>
 
     <div class="day col p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted">

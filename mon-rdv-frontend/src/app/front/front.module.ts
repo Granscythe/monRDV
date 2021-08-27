@@ -5,6 +5,8 @@ import {RdvFuturComponent} from "./rdv-futur/rdv-futur.component";
 import {ConsultationComponent} from "./consultation/consultation.component";
 import {ValidationRdvComponent} from "./validationRdv/validationRdv.component";
 import { CreneauComponent } from './creneau/creneau.component';
+import { RdvPasserComponent } from './rdv-passer/rdv-passer.component';
+import {StatutCatePipe} from "./statut-cate.pipe";
 import {PatientComponent} from "./patient/patient.component";
 import {AccueilComponent} from "./accueil/accueil.component";
 import {PraticienComponent} from "./praticien/praticien.component";
@@ -23,6 +25,8 @@ import {LieuComponent} from "./lieu/lieu.component";
     LieuComponent,
     AccueilComponent,
     PraticienComponent,
+    RdvPasserComponent,
+    StatutCatePipe
     ValidationRdvComponent,
   ],
   imports: [
@@ -30,4 +34,6 @@ import {LieuComponent} from "./lieu/lieu.component";
     FormsModule
   ]
 })
+
+
 export class FrontModule { }
