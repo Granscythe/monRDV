@@ -1,5 +1,6 @@
 import {Praticien} from "./praticien";
 import {Consultation} from "./Consultation";
+import {Lieu} from "./lieu";
 
 
 export class Creneau{

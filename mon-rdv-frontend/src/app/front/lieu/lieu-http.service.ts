@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {AppConfigService} from "../app-config.service";
-import {Lieu} from "../model/lieu";
+import {AppConfigService} from "../../app-config.service";
+import {Lieu} from "../../model/lieu";
 
 
 @Injectable({

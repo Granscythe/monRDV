@@ -24,7 +24,7 @@ public class Patient extends Utilisateur {
 	@JsonView(Views.ViewCommon.class)
 	private String telephone;
 	@OneToMany(mappedBy = "patient")
-	@JsonView(Views.ViewPatient.class )
+	@JsonView(Views.ViewPatientConsultation.class )
 	private List<Consultation> consultations = new ArrayList<Consultation>();
 
 	public Patient() {
