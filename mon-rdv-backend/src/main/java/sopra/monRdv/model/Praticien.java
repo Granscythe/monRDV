@@ -25,10 +25,15 @@ public class Praticien extends Utilisateur {
 	@Column(length = 15)
 	@Enumerated(EnumType.STRING)
 	private Convention convention;
+	@JsonView(Views.ViewCommon.class)
 	private boolean carteVitale;
+	@JsonView(Views.ViewCommon.class)
 	private boolean cb;
+	@JsonView(Views.ViewCommon.class)
 	private boolean cheque;
+	@JsonView(Views.ViewCommon.class)
 	private boolean espece;
+	@JsonView(Views.ViewCommon.class)
 	private int dureeCreneau;
 	@OneToMany(mappedBy = "praticien")
 	@JsonIgnore
