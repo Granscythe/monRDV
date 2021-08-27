@@ -8,6 +8,7 @@ import {FrontModule} from "./front/front.module";
 import { PatientComponent } from './patient/patient.component';
 import { LieuComponent } from './lieu/lieu.component';
 import { AccueilComponent } from './front/accueil/accueil.component';
+import { PraticienComponent } from './praticien/praticien.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AccueilComponent } from './front/accueil/accueil.component';
     PatientComponent,
     LieuComponent,
     AccueilComponent,
+    PraticienComponent,
   ],
   imports: [
     BrowserModule,
