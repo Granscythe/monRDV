@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: "lieu", component: LieuComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "", redirectTo: "accueil", pathMatch: "full"},
-  {path: "planning", component: PlanningComponent},
+  {path: "planning/:id", component: PlanningComponent},
   {path: "rdv-Futur", component: RdvFuturComponent},
   {path: "consultation", component: ConsultationComponent},
 ];
