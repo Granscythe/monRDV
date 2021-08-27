@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Patient extends Utilisateur {
 	@Temporal(TemporalType.DATE)
@@ -24,7 +26,7 @@ public class Patient extends Utilisateur {
 	@JsonView(Views.ViewCommon.class)
 	private String telephone;
 	@OneToMany(mappedBy = "patient")
-	@JsonView()
+	@JsonView(Views.ViewPatientConsultation.class )
 	private List<Consultation> consultations = new ArrayList<Consultation>();
 
 	public Patient() {

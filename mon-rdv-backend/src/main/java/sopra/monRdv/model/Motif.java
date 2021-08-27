@@ -14,6 +14,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Motif {
 	@Id
@@ -30,7 +33,7 @@ public class Motif {
 	private int nbCreneau;
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
-	@JsonView()
+	@JsonIgnore
 	private Praticien praticien;
 	@OneToMany(mappedBy = "motif")
 	@JsonView(Views.ViewMotif.class)
