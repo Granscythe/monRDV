@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Patient} from "../model/patient";
+import {Patient} from "../../model/patient";
 import {LieuHttpService} from "./lieu-http.service";
-import {Lieu} from "../model/lieu";
+import {Lieu} from "../../model/lieu";
 
 
 @Component({

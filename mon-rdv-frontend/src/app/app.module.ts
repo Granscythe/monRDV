@@ -5,15 +5,13 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {FrontModule} from "./front/front.module";
-import { ConsultationComponent } from './front/consultation/consultation.component';
-import { PatientComponent } from './patient/patient.component';
-import { LieuComponent } from './lieu/lieu.component';
-import { AccueilComponent } from './front/accueil/accueil.component';
+// import { ConsultationComponent } from './front/consultation/consultation.component';
+import { PatientComponent } from './front/patient/patient.component';
+import { LieuComponent } from './front/lieu/lieu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConsultationComponent,
     PatientComponent,
     LieuComponent,
     AccueilComponent,
