@@ -1,6 +1,7 @@
 import {Praticien} from "./praticien";
 import {Creneau} from "./Creneau";
 import {Patient} from "./patient";
+import {Motif} from "./motif";
 
 export class Consultation{
   id:number;

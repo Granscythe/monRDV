@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {AppConfigService} from "../../app-config.service";
 import {Creneau} from "../../model/Creneau";
 import {Observable} from "rxjs";
+import {Praticien} from "../../model/praticien";
 
 
 @Injectable({
@@ -10,14 +11,15 @@ import {Observable} from "rxjs";
 })
 export class PlanningHttpService {
 
+  praticien: Praticien;
   creneaux: Array<Creneau> = new Array<Creneau>();
 
   constructor(private http: HttpClient, private appConfigService: AppConfigService) {
     this.load();
   }
 
-  findAllByPraticienId(id: number): Observable<Creneau> {
-    return this.http.get<Creneau>(this.appConfigService.backEndUrl + "praticien/" + id+"/creneaux");
+  findAllByPraticienId(id: number): Observable<Array<Creneau>> {
+    return this.http.get<Array<Creneau>>(this.appConfigService.backEndUrl + "praticien/" + id+"/creneaux");
   }
 
   load() {

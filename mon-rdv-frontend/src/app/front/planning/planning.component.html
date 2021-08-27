@@ -1,14 +1,18 @@
 <div class="container-fluid">
-    <h4 class="display-4 mb-4 text-center">November 2017</h4>
+
+
+
+  <h4 class="display-4 mb-4 text-center">Docteur {{PlanningForm.praticien.nom}}</h4>
+  <h4 class="display-4 mb-4 text-center">Novembre 2017</h4>
         <span class="row">
           <h5 class="horaire col-sm-1 text-center">Horaires</h5>
-          <h5 class="col p-1 text-center">Lundi 7</h5>
-          <h5 class="col p-1 text-center">Mardi 8</h5>
-          <h5 class="col p-1 text-center">Mercredi 9</h5>
-          <h5 class="col p-1 text-center">Jeudi 10</h5>
-          <h5 class="col p-1 text-center">Vendredi 11</h5>
-          <h5 class="col p-1 text-center">Samedi 12</h5>
-          <h5 class="col p-1 text-center">Dimanche 13</h5>
+          <h5 class="col p-1 text-center">Lundi {{date}}</h5>
+          <h5 class="col p-1 text-center">Mardi {{date}}</h5>
+          <h5 class="col p-1 text-center">Mercredi {{date}}</h5>
+          <h5 class="col p-1 text-center">Jeudi {{date}}</h5>
+          <h5 class="col p-1 text-center">Vendredi {{date}}</h5>
+          <h5 class="col p-1 text-center">Samedi {{date}}</h5>
+          <h5 class="col p-1 text-center">Dimanche {{date}}</h5>
         </span>
 
   <div class="row border border-right-0 border-bottom-0">
@@ -31,7 +35,10 @@
 
 
     <div class="day col p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted">
-
+      <table class="rdv">
+        <tr *ngFor="let cren of listCreneauxJour(1)"><td class="dispo d-inline-flex rounded text-truncate bg-info text-white" title="Test Dispo">Creneau n°
+          {{cren.id}}</td></tr>
+      </table>
 
 
     </div>
