@@ -1,6 +1,7 @@
 import {Utilisateur} from "./utilisateur";
 import {Adresse} from "./adresse";
 import {Praticien} from "./praticien";
+import {Creneau} from "./Creneau";
 
 export class Lieu{
   id: number;
@@ -9,9 +10,9 @@ export class Lieu{
   virtuel: boolean;
   adr: Adresse;
   praticien: Praticien;
-  // creneau: Creneau;
+  creneau: Creneau;
 
-  constructor(id?: number, version?: number, nom?: string, virtuel?: boolean, adr?: Adresse, praticien?: Praticien) {
+  constructor(id?: number, version?: number, nom?: string, virtuel?: boolean, adr?: Adresse, praticien?: Praticien, craneau?: Creneau) {
 
     this.id = id;
     this.version = version;
@@ -19,5 +20,6 @@ export class Lieu{
     this.virtuel = virtuel;
     this.adr = adr;
     this.praticien = praticien;
+    this.creneau = craneau;
   }
 }

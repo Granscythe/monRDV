@@ -1,11 +1,12 @@
 import {Component, NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AccueilComponent} from "./front/accueil/accueil.component";
-// import {PraticienComponent} from "./praticien/praticien.component";
-import {PatientComponent} from "./patient/patient.component";
-import {LieuComponent} from "./lieu/lieu.component";
+// import {PraticienComponent} from "./front/praticien/praticien.component";
+import {PatientComponent} from "./front/patient/patient.component";
+import {LieuComponent} from "./front/lieu/lieu.component";
 import {RdvFuturComponent} from "./front/rdv-futur/rdv-futur.component";
 import {PlanningComponent} from "./front/planning/planning.component";
+import {AccueilComponent} from "./front/accueil/accueil.component";
+import {ConsultationComponent} from "./front/consultation/consultation.component";
 
 
 const routes: Routes = [
@@ -15,9 +16,9 @@ const routes: Routes = [
   {path: "lieu", component: LieuComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "", redirectTo: "accueil", pathMatch: "full"},
-  // {path: "accueil", component: AccueilComponent},
   {path: "planning/:id", component: PlanningComponent},
-  // {path: "", redirectTo: "accueil", pathMatch: "full"}
+  {path: "rdv-Futur", component: RdvFuturComponent},
+  {path: "consultation", component: ConsultationComponent},
 ];
 
 @NgModule({
