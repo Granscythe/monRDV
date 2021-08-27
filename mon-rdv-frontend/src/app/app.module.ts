@@ -7,12 +7,11 @@ import {FormsModule} from "@angular/forms";
 
 import {HttpClientModule} from "@angular/common/http";
 import {FrontModule} from "./front/front.module";
-import { ValidationRdvComponent } from './validationRdv/validationRdv.component';
+import { ValidationRdvComponent } from './front/validationRdv/validationRdv.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ValidationRdvComponent,
   ],
   imports: [
     BrowserModule,

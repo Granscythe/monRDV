@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ValidationRdvComponent} from "./validationRdv/validationRdv.component";
+import {ValidationRdvComponent} from "./front/validationRdv/validationRdv.component";
 
 
 const routes: Routes = [
-  {path: "accueil", component: AccueilComponent},
+  // {path: "accueil", component: AccueilComponent},
   {path: "validationRdv", component: ValidationRdvComponent},
   {path: "", redirectTo: "accueil", pathMatch: "full"}
 ];

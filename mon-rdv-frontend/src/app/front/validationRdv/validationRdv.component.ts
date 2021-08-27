@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'validationRdv',
-  templateUrl: './validation-rdv.component.html',
-  styleUrls: ['./validation-rdv.component.scss']
+  templateUrl: './validationRdv.component.html',
+  styleUrls: ['./validationRdv.component.scss']
 })
 export class ValidationRdvComponent implements OnInit {
 
