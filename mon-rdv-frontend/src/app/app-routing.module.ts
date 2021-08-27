@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: "patient", component: PatientComponent},
   {path: "lieu", component: LieuComponent},
   {path: "accueil", component: AccueilComponent},
-  {path: "", redirectTo: "accueil", pathMatch: "full"}
+  {path: "", redirectTo: "accueil", pathMatch: "full"},
   // {path: "accueil", component: AccueilComponent},
   {path: "planning", component: PlanningComponent},
   // {path: "", redirectTo: "accueil", pathMatch: "full"}
