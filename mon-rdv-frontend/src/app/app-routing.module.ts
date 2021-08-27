@@ -4,10 +4,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {PatientComponent} from "./patient/patient.component";
 import {LieuComponent} from "./lieu/lieu.component";
 import {RdvFuturComponent} from "./front/rdv-futur/rdv-futur.component";
+import {RdvPasserComponent} from "./front/rdv-passer/rdv-passer.component";
 
 
 const routes: Routes = [
   {path: "rdvFutur", component: RdvFuturComponent},
+  {path: "rdvPasser", component: RdvPasserComponent},
   // {path: "", redirectTo: "accueil", pathMatch: "full"}
   // {path: "praticien", component: PraticienComponent},
   {path: "patient", component: PatientComponent},

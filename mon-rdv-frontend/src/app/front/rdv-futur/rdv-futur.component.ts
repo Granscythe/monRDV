@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RdvFuturHttpService} from "./rdv-futur-http.service";
 import {Consultation} from "../../model/Consultation";
-import {ConsultationHttpService} from "../consultation/consultation-http.service";
-import {Patient} from "../../model/patient";
-import {PatientHttpService} from "../../patient/patient-http.service";
 import {Creneau} from "../../model/Creneau";
 import {CreneauHttpService} from "../creneau/creneau-http.service";
 
@@ -15,19 +12,25 @@ import {CreneauHttpService} from "../creneau/creneau-http.service";
 export class RdvFuturComponent implements OnInit {
 
   consultations:Array<Consultation>=new  Array<Consultation>();
-  crenaux:Array<Creneau>=new Array<Creneau>();
-  patient:Patient;
+  crenauxFutur:Array<Creneau>=new Array<Creneau>();
+
 
   constructor(private rdvFuturService:RdvFuturHttpService,private creneauService:CreneauHttpService ) { }
 
-  ngOnInit(): void {this.listCreneau(2);
+  ngOnInit(): void {this.listCreneauFutur(2);
 
   }
 
-  listCreneau(id:number){
-    this.creneauService.findAllByIdPatient(id).subscribe(resp=>{
-      this.crenaux=resp;
+  listCreneauFutur(id:number) {
+    this.creneauService.findAllByIdPatientFutur(id).subscribe(resp => {
+      this.crenauxFutur = resp;
     });
   }
 
+
+  delete(id: number) {
+    this.creneauService.deleteById(id).subscribe(resp=>{
+       this.creneauService.load();}
+    ,error => console.log());
+  }
 }

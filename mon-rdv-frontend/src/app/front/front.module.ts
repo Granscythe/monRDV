@@ -4,6 +4,9 @@ import { PlanningComponent } from './planning/planning.component';
 import {RdvFuturComponent} from "./rdv-futur/rdv-futur.component";
 import {ConsultationComponent} from "./consultation/consultation.component";
 import { CreneauComponent } from './creneau/creneau.component';
+import {AppModule} from "../app.module";
+import { RdvPasserComponent } from './rdv-passer/rdv-passer.component';
+import {StatutCatePipe} from "./statut-cate.pipe";
 
 
 
@@ -12,10 +15,14 @@ import { CreneauComponent } from './creneau/creneau.component';
     PlanningComponent,
     RdvFuturComponent,
     ConsultationComponent,
-    CreneauComponent
+    CreneauComponent,
+    RdvPasserComponent,
+    StatutCatePipe
   ],
   imports: [
     CommonModule
   ]
 })
+
+
 export class FrontModule { }

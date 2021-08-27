@@ -25,8 +25,12 @@ export class CreneauHttpService {
     return this.http.get<Creneau>(this.chemin + id);
   }
 
-  findAllByIdPatient(id:number):Observable<Array<Creneau>>{
-    return this.http.get<Array<Creneau>>(this.chemin+"patient/"+id);
+  findAllByIdPatientFutur(id:number):Observable<Array<Creneau>>{
+    return this.http.get<Array<Creneau>>(this.chemin+"patient/"+id+"/futur/");
+  }
+
+  findAllByIdPatientPasser(id:number):Observable<Array<Creneau>>{
+    return this.http.get<Array<Creneau>>(this.chemin+"patient/"+id+"/passer/");
   }
 
   create(creneau: Creneau) {

@@ -9,19 +9,21 @@ import { PatientComponent } from './patient/patient.component';
 import { LieuComponent } from './lieu/lieu.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PatientComponent,
-    LieuComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    FrontModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        PatientComponent,
+        LieuComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        FrontModule
+    ],
+    providers: [],
+    exports: [
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
