@@ -5,6 +5,7 @@ import {PatientComponent} from "./front/patient/patient.component";
 import {LieuComponent} from "./front/lieu/lieu.component";
 import {RdvFuturComponent} from "./front/rdv-futur/rdv-futur.component";
 import {PlanningComponent} from "./front/planning/planning.component";
+import {AccueilComponent} from "./front/accueil/accueil.component";
 import {ConsultationComponent} from "./front/consultation/consultation.component";
 
 
