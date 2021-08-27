@@ -8,6 +8,8 @@ public class Views {
 	public static class ViewConsultation extends ViewCommon{}
 	public static class ViewCreneau extends ViewCommon{}
 	public static class ViewCreneauPatient extends ViewCreneau{}
+	public static class ViewCreneauPatientFutur extends ViewCreneau{}
+	public static class ViewCreneauPatientPasser extends ViewCreneau{}
     public static class ViewPlanning extends ViewCommon {}
     public static class ViewPraticien extends ViewCommon {}
     public static class ViewMotif extends ViewCommon {}

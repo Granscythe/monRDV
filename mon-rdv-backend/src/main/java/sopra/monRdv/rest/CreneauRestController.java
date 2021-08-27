@@ -1,5 +1,8 @@
 package sopra.monRdv.rest;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,6 +45,26 @@ public class CreneauRestController {
 	@JsonView(Views.ViewCreneauPatient.class)
 	public List<Creneau> findAllCreneauPatient(@PathVariable Long id) {
 		return creneauRepo.findAllCreneauPatient(id);
+	}
+	
+	@GetMapping("/patient/{id}/futur")
+	@JsonView(Views.ViewCreneauPatientFutur.class)
+	public List<Creneau> findAllCreneauPatientFutur(@PathVariable Long id) {
+		ZoneId defaultZoneId = ZoneId.systemDefault();
+        System.out.println("System Default TimeZone : " + defaultZoneId);
+		Date dtCreneau= Date.from(LocalDate.now().atStartOfDay(defaultZoneId).toInstant());
+		System.out.println("System date today : "+dtCreneau);
+		return creneauRepo.findAllCreneauPatientFutur(id,dtCreneau);
+	}
+	
+	@GetMapping("/patient/{id}/passer")
+	@JsonView(Views.ViewCreneauPatientPasser.class)
+	public List<Creneau> findAllCreneauPatientPasser(@PathVariable Long id) {
+		ZoneId defaultZoneId = ZoneId.systemDefault();
+        System.out.println("System Default TimeZone : " + defaultZoneId);
+		Date dtCreneau= Date.from(LocalDate.now().atStartOfDay(defaultZoneId).toInstant());
+		System.out.println("System date today : "+dtCreneau);
+		return creneauRepo.findAllCreneauPatientPasser(id,dtCreneau);
 	}
 
 	@GetMapping("/{id}")
