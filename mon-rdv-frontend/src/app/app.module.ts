@@ -10,9 +10,15 @@ import { LieuComponent } from './lieu/lieu.component';
 import { AccueilComponent } from './front/accueil/accueil.component';
 import { PraticienComponent } from './praticien/praticien.component';
 
+import { MotifComponent } from './front/motif/motif.component';
+import {MotifService} from "./front/motif/motif.service";
+import {AppConfigService} from "./app-config.service";
+
 @NgModule({
   declarations: [
     AppComponent,
+    MotifComponent,
+
     PatientComponent,
     LieuComponent,
     AccueilComponent,
@@ -23,9 +29,9 @@ import { PraticienComponent } from './praticien/praticien.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FrontModule
+
   ],
-  providers: [],
+  providers: [AppConfigService,MotifService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
