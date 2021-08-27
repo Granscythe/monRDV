@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PlanningDTO} from "../../model/planningDTO";
+import {PlanningHttpService} from "./planningHttp.service";
 
 @Component({
   selector: 'app-planning',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanningComponent implements OnInit {
 
-  constructor() { }
+  PlanningForm: PlanningDTO = null;
+
+  constructor(private planningService: PlanningHttpService) { }
 
   ngOnInit(): void {
   }
+
+listCreneaux() {
+    return this.planningService.findAllByPraticienId()
+}
 
 }

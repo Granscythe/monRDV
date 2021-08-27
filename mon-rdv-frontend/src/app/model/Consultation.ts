@@ -9,6 +9,7 @@ export class Consultation{
   nbCreneau:number;
   patient:Patient;
   praticien :Praticien;
+  motif : Motif;
   crenaux:Array<Creneau>;
 
   constructor(id?:number,version?:number,statut?:string,
