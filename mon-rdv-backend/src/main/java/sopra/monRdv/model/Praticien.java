@@ -9,31 +9,46 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Praticien extends Utilisateur {
 	@Column(length = 15)
+	@JsonView(Views.ViewCommon.class)
 	private String matricule;
 	@Column(length = 15)
+	@JsonView(Views.ViewCommon.class)
 	private String telephone;
 	@Column(length = 255)
 	private String photo;
 	@Column(length = 15)
 	@Enumerated(EnumType.STRING)
 	private Convention convention;
+	@JsonView(Views.ViewCommon.class)
 	private boolean carteVitale;
+	@JsonView(Views.ViewCommon.class)
 	private boolean cb;
+	@JsonView(Views.ViewCommon.class)
 	private boolean cheque;
+	@JsonView(Views.ViewCommon.class)
 	private boolean espece;
+	@JsonView(Views.ViewCommon.class)
 	private int dureeCreneau;
 	@OneToMany(mappedBy = "praticien")
+	@JsonIgnore
 	private List<Consultation> consultations = new ArrayList<Consultation>();
 	@OneToMany(mappedBy = "praticien")
+	@JsonIgnore
 	private List<Motif> motifs = new ArrayList<Motif>();
 	@OneToMany(mappedBy = "praticien")
+	@JsonIgnore
 	private List<Lieu> lieux = new ArrayList<Lieu>();
 	@OneToMany(mappedBy = "praticien")
+	@JsonIgnore
 	private List<Creneau> creneaux = new ArrayList<Creneau>();
 	@OneToMany(mappedBy = "praticien")
+	@JsonIgnore
 	private List<PraticienSpecialite> specialites = new ArrayList<PraticienSpecialite>();
 
 	public Praticien() {

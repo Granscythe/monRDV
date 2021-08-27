@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import sopra.monRdv.model.Patient;
+import sopra.monRdv.model.Views;
 import sopra.monRdv.repository.IUtilisateurRepository;
 
 @RestController
@@ -28,12 +31,27 @@ public class PatientRestController {
 	private IUtilisateurRepository utilisateurRepo;
 
 	@GetMapping("")
+	@JsonView(Views.ViewPatient.class)
 	public List<Patient> findAll() {
 		return utilisateurRepo.findAllPatient();
 	}
 
 	@GetMapping("/{id}")
+	@JsonView(Views.ViewPatient.class)
 	public Patient find(@PathVariable Long id) {
+
+		Optional<Patient> optPatient = utilisateurRepo.findPatientById(id);
+
+		if (optPatient.isPresent()) {
+			return optPatient.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
+	
+	@GetMapping("/{id}/consultation")
+	@JsonView(Views.ViewPatientConsultation.class)
+	public Patient findByIdAndConsultation(@PathVariable Long id) {
 
 		Optional<Patient> optPatient = utilisateurRepo.findPatientById(id);
 

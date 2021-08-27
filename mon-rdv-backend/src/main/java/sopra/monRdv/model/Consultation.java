@@ -14,25 +14,35 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Consultation {
 	@Id
 	@GeneratedValue
+	@JsonView(Views.ViewCommon.class)
 	private Long id;
 	@Version
+	@JsonView(Views.ViewCommon.class)
 	private int version;
 	@Column(length = 15)
 	@Enumerated(EnumType.STRING)
+	@JsonView(Views.ViewCommon.class)
 	private Statut statut;
+	@JsonView(Views.ViewCommon.class)
 	private int nbCreneau;
 	@ManyToOne
 	@JoinColumn(name = "patient_id")
-	private Patient patient;
+	@JsonView({Views.ViewCreneau.class,Views.ViewCreneauPatient.class})
+	private Patient patient;	
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
+	@JsonView({Views.ViewPatientConsultation.class,Views.ViewCreneauPatient.class})
 	private Praticien praticien;
 	@ManyToOne
 	@JoinColumn(name = "motif_id")
+	@JsonView({Views.ViewPatientConsultation.class,Views.ViewCreneau.class,Views.ViewCreneauPatient.class})
 	private Motif motif;
 	@OneToMany(mappedBy = "consultation")
 	private List<Creneau> creneaux = new ArrayList<Creneau>();
