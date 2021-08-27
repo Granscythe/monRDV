@@ -31,10 +31,10 @@ public class Creneau {
 	private Date heureCreneau;
 	@JsonView(Views.ViewCommon.class)
 	private int duree;
+	@JsonView(Views.ViewCommon.class)
 	private boolean dispo;
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
-	@JsonView(Views.ViewPatient.class)
 	private Praticien praticien;
 	@ManyToOne
 	@JoinColumn(name = "lieu_id")
@@ -42,7 +42,7 @@ public class Creneau {
 	private Lieu lieu;
 	@ManyToOne
 	@JoinColumn(name = "consultation_id")
-	@JsonIgnore
+	@JsonView({Views.ViewCreneau.class,Views.ViewCreneauPatient.class})
 	private Consultation consultation;
 
 	public Creneau() {

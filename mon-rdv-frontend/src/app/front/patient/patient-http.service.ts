@@ -24,6 +24,11 @@ export class PatientHttpService {
     return this.http.get<Patient>(this.appConfigService.backEndUrl + "patient/" + id);
   }
 
+  findByIdConsultation(id: number): Observable<Patient> {
+    return this.http.get<Patient>(this.appConfigService.backEndUrl + "patient/" + id+"/consultation/");
+  }
+
+
   create(patient: Patient) {
     this.http.post<Patient>(this.appConfigService.backEndUrl + "patient/", patient).subscribe(response => {
       this.load();

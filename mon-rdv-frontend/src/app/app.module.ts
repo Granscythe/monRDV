@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {FrontModule} from "./front/front.module";
+import { AccueilComponent } from './front/accueil/accueil.component';
+import { PraticienComponent } from './praticien/praticien.component';
 // import { ConsultationComponent } from './front/consultation/consultation.component';
 import { PatientComponent } from './front/patient/patient.component';
 import { LieuComponent } from './front/lieu/lieu.component';
@@ -15,6 +17,7 @@ import { LieuComponent } from './front/lieu/lieu.component';
     PatientComponent,
     LieuComponent,
     AccueilComponent,
+    PraticienComponent,
   ],
   imports: [
     BrowserModule,

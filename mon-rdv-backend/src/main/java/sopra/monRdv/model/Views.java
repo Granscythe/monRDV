@@ -5,8 +5,13 @@ public class Views {
 	
 	public static class ViewUtilisateur extends ViewCommon{}
 	public static class ViewPatient extends ViewUtilisateur{}
+	public static class ViewPatientConsultation extends ViewPatient{}
 	
 	public static class ViewConsultation extends ViewCommon{}
+	
+	public static class ViewCreneau extends ViewCommon{}
+	public static class ViewCreneauPatient extends ViewCreneau{}
+	
 	
 
 }
