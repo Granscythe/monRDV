@@ -9,6 +9,7 @@ import { PatientComponent } from './patient/patient.component';
 import { LieuComponent } from './lieu/lieu.component';
 import { AccueilComponent } from './front/accueil/accueil.component';
 import { PraticienComponent } from './front/praticien/praticien.component';
+import {AgePipe} from "./age.pipe";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PraticienComponent } from './front/praticien/praticien.component';
     LieuComponent,
     AccueilComponent,
     PraticienComponent,
+    AgePipe
   ],
   imports: [
     BrowserModule,
