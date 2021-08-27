@@ -13,9 +13,9 @@
         <div class="col-auto d-none d-lg-block">
           <div class="img"><img class="img-responsive" src="https://media-cdn.tripadvisor.com/media/photo-s/10/48/8b/7e/mugshot.jpg" alt="PhotoPraticien" width="230" height="300"> </div>
          </div>
-        <div class="col p-4 d-flex flex-column position-static">
+        <div class="col p-4 d-flex flex-column position-static" *ngIf="patient.patientForm">
           <strong class="d-inline-block mb-2 text-primary">Praticien</strong>
-          <h3 class="mb-0">NOM Prenom</h3>
+          <h3 class="mb-0">{{patient.nom}}</h3>
 
           <div class="mb-1 text-muted">specialite</div>
 
