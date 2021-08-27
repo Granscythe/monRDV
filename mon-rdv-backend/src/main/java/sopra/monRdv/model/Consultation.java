@@ -36,7 +36,7 @@ public class Consultation {
 	private int nbCreneau;
 	@ManyToOne
 	@JoinColumn(name = "patient_id")
-	@JsonView({Views.ViewCreneau.class,Views.ViewCreneauPatient.class})
+	@JsonView({Views.ViewCreneau.class,Views.ViewCreneauPatient.class,Views.ViewPlanning.class})
 	private Patient patient;	
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
@@ -44,7 +44,7 @@ public class Consultation {
 	private Praticien praticien;
 	@ManyToOne
 	@JoinColumn(name = "motif_id")
-	@JsonView({Views.ViewPatientConsultation.class,Views.ViewCreneau.class,Views.ViewCreneauPatient.class})
+	@JsonView({Views.ViewPatientConsultation.class,Views.ViewCreneau.class,Views.ViewCreneauPatient.class,Views.ViewPlanning.class})
 	private Motif motif;
 	@OneToMany(mappedBy = "consultation")
 	@JsonView()
