@@ -3,6 +3,7 @@ package sopra.monRdv.rest;
 import java.util.List;
 import java.util.Optional;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -28,6 +29,7 @@ import sopra.monRdv.repository.ICreneauRepository;
 public class CreneauRestController {
 
 	@Autowired
+	@JsonView(Views.ViewCreneau.class)
 	private ICreneauRepository creneauRepo;
 
 	@GetMapping("")
@@ -56,6 +58,7 @@ public class CreneauRestController {
 	}
 
 	@PostMapping("")
+	@JsonView(Views.ViewCreneau.class)
 	public Creneau create(@RequestBody Creneau creneau) {
 		creneau = creneauRepo.save(creneau);
 
@@ -63,6 +66,7 @@ public class CreneauRestController {
 	}
 
 	@PutMapping("/{id}")
+	@JsonView(Views.ViewCreneau.class)
 	public Creneau update(@RequestBody Creneau creneau, @PathVariable Long id) {
 		if (!creneauRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
@@ -73,7 +77,9 @@ public class CreneauRestController {
 		return creneau;
 	}
 
+
 	@DeleteMapping("/{id}")
+	@JsonView(Views.ViewCreneau.class)
 	public void delete(@PathVariable Long id) {
 		if (!creneauRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");

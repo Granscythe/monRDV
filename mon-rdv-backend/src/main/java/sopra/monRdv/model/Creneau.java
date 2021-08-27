@@ -1,5 +1,7 @@
 package sopra.monRdv.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -35,14 +37,15 @@ public class Creneau {
 	private boolean dispo;
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
+	@JsonView(Views.ViewCreneau.class)
 	private Praticien praticien;
 	@ManyToOne
 	@JoinColumn(name = "lieu_id")
-	@JsonIgnore
+	@JsonView({Views.ViewCreneau.class,Views.ViewPlanning.class})
 	private Lieu lieu;
 	@ManyToOne
 	@JoinColumn(name = "consultation_id")
-	@JsonView({Views.ViewCreneau.class,Views.ViewCreneauPatient.class})
+	@JsonView({Views.ViewCreneau.class,Views.ViewCreneauPatient.class,Views.ViewPlanning.class})
 	private Consultation consultation;
 
 	public Creneau() {
