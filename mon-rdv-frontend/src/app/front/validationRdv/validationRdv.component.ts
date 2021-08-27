@@ -4,6 +4,8 @@ import {PraticienHttpService} from "../praticien/praticien-http.service";
 import {ActivatedRoute} from "@angular/router";
 import {Praticien} from "../../model/praticien";
 import {CreneauHttpService} from "../creneau/creneau-http.service";
+import {Consultation} from "../../model/Consultation";
+import {Motif} from "../../model/motif";
 
 @Component({
   selector: 'validationRdv',
@@ -22,6 +24,7 @@ export class ValidationRdvComponent implements OnInit {
 
   civilites: Array<String> = new Array<String>();
   motifForm: Motif = null;
+  consultationForm: Consultation = null;
   constructor(private route: ActivatedRoute, private praticienService: PraticienHttpService, private motif : MotifHttpService, private creneau : CreneauHttpService) {
   }
 
