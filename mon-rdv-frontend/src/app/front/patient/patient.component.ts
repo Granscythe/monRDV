@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Patient} from "../model/patient";
+import {Patient} from "../../model/patient";
 import {PatientHttpService} from "./patient-http.service";
 
 

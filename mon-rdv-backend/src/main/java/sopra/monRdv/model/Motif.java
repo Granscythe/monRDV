@@ -1,5 +1,7 @@
 package sopra.monRdv.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +36,7 @@ public class Motif {
 	@JsonIgnore
 	private Praticien praticien;
 	@OneToMany(mappedBy = "motif")
-	@JsonIgnore
+	@JsonView(Views.ViewMotif.class)
 	private List<Consultation> consultations = new ArrayList<Consultation>();
 
 	public Motif() {

@@ -1,5 +1,7 @@
 package sopra.monRdv.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +23,11 @@ public class Praticien extends Utilisateur {
 	@JsonView(Views.ViewCommon.class)
 	private String telephone;
 	@Column(length = 255)
+	@JsonView(Views.ViewCommon.class)
 	private String photo;
 	@Column(length = 15)
 	@Enumerated(EnumType.STRING)
+	@JsonView(Views.ViewCommon.class)
 	private Convention convention;
 	@JsonView(Views.ViewCommon.class)
 	private boolean carteVitale;
@@ -36,19 +40,19 @@ public class Praticien extends Utilisateur {
 	@JsonView(Views.ViewCommon.class)
 	private int dureeCreneau;
 	@OneToMany(mappedBy = "praticien")
-	@JsonIgnore
+	@JsonView(Views.ViewPraticien.class)
 	private List<Consultation> consultations = new ArrayList<Consultation>();
 	@OneToMany(mappedBy = "praticien")
-	@JsonIgnore
+	@JsonView(Views.ViewPraticien.class)
 	private List<Motif> motifs = new ArrayList<Motif>();
 	@OneToMany(mappedBy = "praticien")
-	@JsonIgnore
+	@JsonView(Views.ViewPraticien.class)
 	private List<Lieu> lieux = new ArrayList<Lieu>();
 	@OneToMany(mappedBy = "praticien")
-	@JsonIgnore
+	@JsonView(Views.ViewPraticien.class)
 	private List<Creneau> creneaux = new ArrayList<Creneau>();
 	@OneToMany(mappedBy = "praticien")
-	@JsonIgnore
+	@JsonView(Views.ViewPraticien.class)
 	private List<PraticienSpecialite> specialites = new ArrayList<PraticienSpecialite>();
 
 	public Praticien() {

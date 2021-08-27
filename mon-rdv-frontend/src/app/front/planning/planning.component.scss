@@ -1,0 +1,70 @@
+@media (max-width:575px) {
+  .display-4 {
+    font-size: 1.5rem;
+
+  }
+  .day h5 {
+    background-color: #f8f9fa;
+    padding: 3px 5px 5px;
+    margin: -8px -8px 8px -8px;
+    display:inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+
+  }
+
+  .date {
+    padding-left: 4px;
+  }
+}
+.horaire {
+  color: lightblue;
+  width: 10px;
+}
+
+.heures tr {
+  height:25px;
+}
+.heures td {
+  font-size:15px;
+}
+.rdv {
+  margin-left: auto;
+  margin-right: auto;
+}
+.vide{
+  height:25px;
+}
+
+.dispo {
+  justify-content: center;
+  width: 200px
+}
+.reserve {
+  justify-content: center;
+  width: 200px;
+  height:25px;
+  background-color:yellow;
+  color:black;
+}
+
+.non_dispo {
+  justify-content: center;
+  width: 200px;
+  height:25px;
+  background-color:gray;
+  color:white;
+}
+
+//.blank-row
+//{
+//  height: 20px !important; /* overwrites any other rules */
+//  background-color: #FFFFFF;
+//}
+
+
+@media (min-width: 576px) {
+  .day {
+    height: 24.2857vw;
+  }
+}

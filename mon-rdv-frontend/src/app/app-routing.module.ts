@@ -1,19 +1,26 @@
 import {Component, NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-// import {PraticienComponent} from "./praticien/praticien.component";
-import {PatientComponent} from "./patient/patient.component";
-import {LieuComponent} from "./lieu/lieu.component";
+// import {PraticienComponent} from "./front/praticien/praticien.component";
+import {PatientComponent} from "./front/patient/patient.component";
+import {LieuComponent} from "./front/lieu/lieu.component";
 import {RdvFuturComponent} from "./front/rdv-futur/rdv-futur.component";
+import {PlanningComponent} from "./front/planning/planning.component";
+import {AccueilComponent} from "./front/accueil/accueil.component";
+import {ConsultationComponent} from "./front/consultation/consultation.component";
 import {RdvPasserComponent} from "./front/rdv-passer/rdv-passer.component";
 
 
 const routes: Routes = [
   {path: "rdvFutur", component: RdvFuturComponent},
   {path: "rdvPasser", component: RdvPasserComponent},
-  // {path: "", redirectTo: "accueil", pathMatch: "full"}
   // {path: "praticien", component: PraticienComponent},
   {path: "patient", component: PatientComponent},
   {path: "lieu", component: LieuComponent},
+  {path: "accueil", component: AccueilComponent},
+  {path: "", redirectTo: "accueil", pathMatch: "full"},
+  {path: "planning/:id", component: PlanningComponent},
+  {path: "rdv-Futur", component: RdvFuturComponent},
+  {path: "consultation", component: ConsultationComponent},
 ];
 
 @NgModule({

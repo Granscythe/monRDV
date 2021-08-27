@@ -1,6 +1,7 @@
 import {Praticien} from "./praticien";
 import {Creneau} from "./Creneau";
 import {Patient} from "./patient";
+import {Motif} from "./motif";
 
 export class Consultation{
   id:number;
@@ -9,6 +10,7 @@ export class Consultation{
   nbCreneau:number;
   patient:Patient;
   praticien :Praticien;
+  motif : Motif;
   crenaux:Array<Creneau>;
 
   constructor(id?:number,version?:number,statut?:string,

@@ -7,6 +7,10 @@ import { CreneauComponent } from './creneau/creneau.component';
 import {AppModule} from "../app.module";
 import { RdvPasserComponent } from './rdv-passer/rdv-passer.component';
 import {StatutCatePipe} from "./statut-cate.pipe";
+import {PatientComponent} from "./patient/patient.component";
+import {LieuComponent} from "./lieu/lieu.component";
+import {AccueilComponent} from "./accueil/accueil.component";
+import {PraticienComponent} from "./praticien/praticien.component";
 
 
 
@@ -16,6 +20,10 @@ import {StatutCatePipe} from "./statut-cate.pipe";
     RdvFuturComponent,
     ConsultationComponent,
     CreneauComponent,
+    PatientComponent,
+    LieuComponent,
+    AccueilComponent,
+    PraticienComponent,
     RdvPasserComponent,
     StatutCatePipe
   ],
