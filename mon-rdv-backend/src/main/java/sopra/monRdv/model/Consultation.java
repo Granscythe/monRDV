@@ -1,4 +1,4 @@
-	package sopra.monRdv.model;
+package sopra.monRdv.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,16 +34,17 @@ public class Consultation {
 	private int nbCreneau;
 	@ManyToOne
 	@JoinColumn(name = "patient_id")
-	@JsonView(Views.ViewConsultation.class)
-	private Patient patient;
+	@JsonView({Views.ViewCreneau.class,Views.ViewCreneauPatient.class})
+	private Patient patient;	
 	@ManyToOne
 	@JoinColumn(name = "praticien_id")
+	@JsonView({Views.ViewPatientConsultation.class,Views.ViewCreneauPatient.class})
 	private Praticien praticien;
 	@ManyToOne
 	@JoinColumn(name = "motif_id")
+	@JsonView({Views.ViewPatientConsultation.class,Views.ViewCreneau.class,Views.ViewCreneauPatient.class})
 	private Motif motif;
 	@OneToMany(mappedBy = "consultation")
-	@JsonView(Views.ViewPatient.class)
 	private List<Creneau> creneaux = new ArrayList<Creneau>();
 
 	public Consultation() {
