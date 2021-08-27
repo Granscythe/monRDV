@@ -5,6 +5,7 @@ import {RdvFuturComponent} from "./rdv-futur/rdv-futur.component";
 import {ConsultationComponent} from "./consultation/consultation.component";
 import {ValidationRdvComponent} from "./validationRdv/validationRdv.component";
 import { CreneauComponent } from './creneau/creneau.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -13,11 +14,12 @@ import { CreneauComponent } from './creneau/creneau.component';
     PlanningComponent,
     RdvFuturComponent,
     ConsultationComponent,
-    CreneauComponent
+    CreneauComponent,
     ValidationRdvComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class FrontModule { }

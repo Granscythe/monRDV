@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: "planning", component: PlanningComponent},
   {path: "rdv-Futur", component: RdvFuturComponent},
   {path: "consultation", component: ConsultationComponent},
-  {path: "validationRdv", component: ValidationRdvComponent},
+  {path: "validationRdv/:id", component: ValidationRdvComponent},
 ];
 
 @NgModule({

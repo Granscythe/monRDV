@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {ValidationRdvHttpService} from "./validationRdvHttp.service";
-import {Patient} from "../../model/patient";
-import {PatientHttpService} from "../patient/patient-http.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {Praticien} from "../../model/praticien";
+import {PraticienHttpService} from "../praticien/praticien-http.service";
+import {ActivatedRoute} from "@angular/router";
+import {Praticien} from "../../model/praticien";
+import {CreneauHttpService} from "../creneau/creneau-http.service";
 
 @Component({
   selector: 'validationRdv',
@@ -9,46 +11,27 @@ import {PatientHttpService} from "../patient/patient-http.service";
   styleUrls: ['./validationRdv.component.scss']
 })
 export class ValidationRdvComponent implements OnInit {
+  @Input()
+  id: number;
+
+  private parametreid: any;
+  praticien: Praticien;
 
 
-  constructor(private patientService: PatientHttpService) {
+
+
+  civilites: Array<String> = new Array<String>();
+  motifForm: Motif = null;
+  constructor(private route: ActivatedRoute, private praticienService: PraticienHttpService, private motif : MotifHttpService, private creneau : CreneauHttpService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.parametreid = this.route.params.subscribe(params => {
+      this.id = +params['id'];
+    });
   }
 
-  listPatient(): Array<Patient> {
-    return this.patientService.findAll();
-  }
-
-  add() {
-    this.validationForm = new ValidationRdv();
-  }
-
-  edit(id: number) {
-    this.validationService.findById(id).subscribe(resp => {
-      this.validationForm = resp;
-    })
-  }
-
-  save() {
-    if (this.validationForm.id) {
-      this.validationService.modify(this.validationForm);
-    } else {
-      this.validationService.create(this.validationForm);
-    }
-
-    this.validationForm = null;
-  }
-
-  // pour l'exemple => mais de préférence coder le subscribe dans le service
-  delete(id: number) {
-    this.validationService.deleteById(id).subscribe(resp => {
-      this.validationService.load();
-    }, error => console.log(error));
-  }
-
-  cancel() {
-    this.validationForm = null;
+  listPraticien(): Array<Praticien> {
+    return this.praticienService.findAll();
   }
 }
