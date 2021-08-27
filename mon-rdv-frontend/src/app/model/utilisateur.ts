@@ -1,4 +1,4 @@
-// import {Adresse} from "./adresse";
+import {Adresse} from "./adresse";
 
 export class Utilisateur {
   id: number;
@@ -7,16 +7,16 @@ export class Utilisateur {
   prenom: string;
   email: string;
   motDePasse: string;
-  // adresse: Adresse;
+  adresse: Adresse;
 
 
-  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string) {
+  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string, adresse?: Adresse) {
     this.id = id;
     this.version = version;
     this.nom = nom;
     this.prenom = prenom;
     this.email = email;
     this.motDePasse = motDePasse;
-    // this.adresse = adresse;
+    this.adresse = adresse;
   }
 }

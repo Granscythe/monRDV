@@ -1,5 +1,5 @@
 import {Utilisateur} from "./utilisateur";
-// import {Adresse} from "./adresse";
+import {Adresse} from "./adresse";
 
 
 export class Praticien extends Utilisateur{
@@ -14,9 +14,10 @@ export class Praticien extends Utilisateur{
   dureeCreneau: number;
 
 
-  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string, matricule?: string, telephone?: string, photo?: string, convention?: string,
+  constructor(id?: number, version?: number, nom?: string, prenom?: string, email?: string, motDePasse?: string,
+              adresse?: Adresse, matricule?: string, telephone?: string, photo?: string, convention?: string,
               carteVitale?: boolean, cb?: boolean, cheque?: boolean, espece?: boolean, dureeCreneau?: number) {
-    super(id, version, nom, prenom, email, motDePasse);
+    super(id, version, nom, prenom, email, motDePasse, adresse);
     this.matricule = matricule;
     this.telephone = telephone;
     this.photo = photo;
